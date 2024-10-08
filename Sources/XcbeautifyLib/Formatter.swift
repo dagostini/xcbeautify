@@ -212,6 +212,8 @@ package struct Formatter {
             return renderer.formatSwiftDriverJobDiscoveryCompiling(group: group)
         case let group as TestingStartedCaptureGroup:
             return renderer.formatTestingStarted(group: group)
+        case let group as SwiftTestTestRunStartedCaptureGroup:
+            return group.wholeResult
         default:
             assertionFailure()
             return nil

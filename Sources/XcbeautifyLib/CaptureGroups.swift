@@ -1249,6 +1249,18 @@ struct TestSuiteAllTestsFailedCaptureGroup: CaptureGroup {
     }
 }
 
+struct SwiftTestTestRunStartedCaptureGroup: CaptureGroup {
+    static var outputType: OutputType = .test
+    static var regex: Regex = Regex(pattern: #"^(?!.*Test run started.*Test run started).*(Test run started).*"#)
+
+    let wholeResult: String
+
+    init?(groups: [String]) {
+        guard let wholeResult = groups[safe: 0] else { return nil }
+        self.wholeResult = wholeResult + " Fairtiq TEST"
+    }
+}
+
 struct TIFFutilCaptureGroup: CaptureGroup {
     static let outputType: OutputType = .task
 

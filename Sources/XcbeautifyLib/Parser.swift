@@ -97,6 +97,7 @@ package final class Parser {
         TestSuiteAllTestsPassedCaptureGroup.self,
         TestSuiteAllTestsFailedCaptureGroup.self,
         TestingStartedCaptureGroup.self,
+        SwiftTestTestRunStartedCaptureGroup.self
     ]
 
     // MARK: - Init
